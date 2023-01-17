@@ -31,13 +31,13 @@ try {
      * @type {string}
      */
     const isReleaseCandidate = packageInfo.version.includes('rc');
-    const isPreleasease = packageInfo.version.includes('alpha') || packageInfo.version.includes('beta');
+    const isPrerelease = packageInfo.version.includes('alpha') || packageInfo.version.includes('beta');
 
     core.setOutput("name", packageInfo.name);
     core.setOutput("version", packageInfo.version);
     core.setOutput("npmjs-link", `https://www.npmjs.com/package/${packageInfo.name}`);
     core.setOutput("is-release-candidate", isReleaseCandidate);
-    core.setOutput("is-prerelease", isPreleasease);
+    core.setOutput("is-prerelease", isPrerelease);
 } catch (error) {
     core.setFailed(error.message);
 }
